@@ -1,0 +1,119 @@
+[09-May-2018 11:11:58 Asia/Jakarta] PHP Warning:  mysqli_connect(): (HY000/1044): Access denied for user 'rinx2639_mambaur'@'localhost' to database 'rinx2639_inven' in /home/rinx2639/public_html/login.php on line 7
+[09-May-2018 11:13:36 Asia/Jakarta] PHP Warning:  mysqli_connect(): (HY000/1044): Access denied for user 'rinx2639_mambaur'@'localhost' to database 'rinx2639_inven' in /home/rinx2639/public_html/login.php on line 7
+[09-May-2018 11:13:39 Asia/Jakarta] PHP Warning:  mysqli_connect(): (HY000/1044): Access denied for user 'rinx2639_mambaur'@'localhost' to database 'rinx2639_inven' in /home/rinx2639/public_html/login.php on line 7
+[09-May-2018 11:19:34 Asia/Jakarta] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'rinx2639_mambaur'@'iix48-1.rumahweb.com' (using password: YES) in /home/rinx2639/public_html/koneksi.php on line 11
+[09-May-2018 11:20:10 Asia/Jakarta] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'rinx2639_mambaur'@'iix48-1.rumahweb.com' (using password: YES) in /home/rinx2639/public_html/koneksi.php on line 11
+[09-May-2018 11:20:15 Asia/Jakarta] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'rinx2639_mambaur'@'iix48-1.rumahweb.com' (using password: YES) in /home/rinx2639/public_html/koneksi.php on line 11
+[09-May-2018 11:23:27 Asia/Jakarta] PHP Warning:  mysqli_connect(): (HY000/1044): Access denied for user 'rinx2639_mambaur'@'localhost' to database 'rinx2639_inven' in /home/rinx2639/public_html/koneksi.php on line 11
+[09-May-2018 11:28:11 Asia/Jakarta] PHP Warning:  mysqli_connect(): (HY000/1044): Access denied for user 'rinx2639_mambaur'@'localhost' to database 'rinx2639_inven' in /home/rinx2639/public_html/koneksi.php on line 11
+[09-May-2018 11:28:14 Asia/Jakarta] PHP Warning:  mysqli_connect(): (HY000/1044): Access denied for user 'rinx2639_mambaur'@'localhost' to database 'rinx2639_inven' in /home/rinx2639/public_html/koneksi.php on line 11
+[09-May-2018 11:29:21 Asia/Jakarta] PHP Warning:  mysqli_connect(): (HY000/1044): Access denied for user 'rinx2639_mambaur'@'localhost' to database 'rinx2639_inven' in /home/rinx2639/public_html/koneksi.php on line 11
+[09-May-2018 11:32:59 Asia/Jakarta] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'rinx2639_mambaur'@'iix48-1.rumahweb.com' (using password: YES) in /home/rinx2639/public_html/koneksi.php on line 11
+[09-May-2018 11:33:48 Asia/Jakarta] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'rinx2639_mambaur'@'iix48-1.rumahweb.com' (using password: YES) in /home/rinx2639/public_html/koneksi.php on line 11
+[09-May-2018 11:33:48 Asia/Jakarta] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/rinx2639/public_html/login.php on line 18
+[09-May-2018 11:33:48 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/rinx2639/public_html/login.php on line 20
+[09-May-2018 11:34:14 Asia/Jakarta] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'rinx2639_mambaur'@'iix48-1.rumahweb.com' (using password: YES) in /home/rinx2639/public_html/koneksi.php on line 11
+[09-May-2018 11:34:14 Asia/Jakarta] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/rinx2639/public_html/login.php on line 18
+[09-May-2018 11:34:14 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/rinx2639/public_html/login.php on line 20
+[09-May-2018 11:42:59 Asia/Jakarta] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'rinx2639_mambaur'@'iix48-1.rumahweb.com' (using password: YES) in /home/rinx2639/public_html/koneksi.php on line 11
+[09-May-2018 11:43:01 Asia/Jakarta] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'rinx2639_mambaur'@'iix48-1.rumahweb.com' (using password: YES) in /home/rinx2639/public_html/koneksi.php on line 11
+[09-May-2018 11:43:16 Asia/Jakarta] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'rinx2639_mambaur'@'iix48-1.rumahweb.com' (using password: YES) in /home/rinx2639/public_html/koneksi.php on line 11
+[11-May-2018 16:25:11 Asia/Jakarta] PHP Warning:  include(koneksiq.php): failed to open stream: No such file or directory in /home/rinx2639/public_html/edit.php on line 2
+[11-May-2018 16:25:11 Asia/Jakarta] PHP Warning:  include(koneksiq.php): failed to open stream: No such file or directory in /home/rinx2639/public_html/edit.php on line 2
+[11-May-2018 16:25:11 Asia/Jakarta] PHP Warning:  include(): Failed opening 'koneksiq.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/rinx2639/public_html/edit.php on line 2
+[11-May-2018 17:49:40 Asia/Jakarta] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/rinx2639/public_html/edit.php on line 4
+[11-May-2018 18:41:37 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tampil.php on line 24
+[11-May-2018 18:42:58 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tampil.php on line 24
+[11-May-2018 18:43:45 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tampil.php on line 25
+[11-May-2018 18:44:48 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tampil.php on line 24
+[12-May-2018 19:57:12 Asia/Jakarta] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/rinx2639/public_html/tampil.php on line 7
+[12-May-2018 19:57:12 Asia/Jakarta] PHP Warning:  mysql_query(): A link to the server could not be established in /home/rinx2639/public_html/tampil.php on line 7
+[14-May-2018 09:12:52 Asia/Jakarta] PHP Fatal error:  Class 'usr' not found in /home/rinx2639/public_html/tampil.php on line 6
+[14-May-2018 16:51:48 Asia/Jakarta] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tampil.php on line 7
+[14-May-2018 16:52:49 Asia/Jakarta] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tampil.php on line 7
+[14-May-2018 16:53:00 Asia/Jakarta] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tampil.php on line 7
+[14-May-2018 16:55:18 Asia/Jakarta] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tampil.php on line 7
+[14-May-2018 16:55:20 Asia/Jakarta] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tampil.php on line 7
+[14-May-2018 17:10:13 Asia/Jakarta] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tampil.php on line 7
+[15-May-2018 20:14:30 Asia/Jakarta] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/rinx2639/public_html/kategori.php on line 9
+[15-May-2018 20:15:10 Asia/Jakarta] PHP Fatal error:  Call to a member function execute() on a non-object in /home/rinx2639/public_html/kategori.php on line 12
+[16-May-2018 09:35:27 Asia/Jakarta] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/rinx2639/public_html/tambahdata.php on line 5
+[16-May-2018 09:35:28 Asia/Jakarta] PHP Warning:  mysql_query(): A link to the server could not be established in /home/rinx2639/public_html/tambahdata.php on line 5
+[16-May-2018 09:35:28 Asia/Jakarta] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/rinx2639/public_html/tambahdata.php on line 6
+[16-May-2018 09:36:34 Asia/Jakarta] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/rinx2639/public_html/tambahdata.php on line 5
+[16-May-2018 09:36:34 Asia/Jakarta] PHP Warning:  mysql_query(): A link to the server could not be established in /home/rinx2639/public_html/tambahdata.php on line 5
+[16-May-2018 09:36:34 Asia/Jakarta] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/rinx2639/public_html/tambahdata.php on line 6
+[16-May-2018 09:36:57 Asia/Jakarta] PHP Warning:  mysqli_query() expects at least 2 parameters, 1 given in /home/rinx2639/public_html/tambahdata.php on line 5
+[16-May-2018 09:36:57 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/rinx2639/public_html/tambahdata.php on line 6
+[16-May-2018 22:55:06 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tambahdata.php on line 49
+[16-May-2018 23:05:03 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tambahdata.php on line 48
+[16-May-2018 23:14:54 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tambahdata.php on line 48
+[16-May-2018 23:16:16 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tambahdata.php on line 48
+[16-May-2018 23:25:44 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '[' in /home/rinx2639/public_html/tambahdata.php on line 46
+[16-May-2018 23:25:51 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '[' in /home/rinx2639/public_html/tambahdata.php on line 46
+[16-May-2018 23:26:20 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '[' in /home/rinx2639/public_html/tambahdata.php on line 46
+[16-May-2018 23:26:45 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '[' in /home/rinx2639/public_html/tambahdata.php on line 46
+[16-May-2018 23:26:46 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '[' in /home/rinx2639/public_html/tambahdata.php on line 46
+[16-May-2018 23:26:48 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '[' in /home/rinx2639/public_html/tambahdata.php on line 46
+[16-May-2018 23:26:49 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '[' in /home/rinx2639/public_html/tambahdata.php on line 46
+[16-May-2018 23:26:49 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '[' in /home/rinx2639/public_html/tambahdata.php on line 46
+[16-May-2018 23:26:49 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '[' in /home/rinx2639/public_html/tambahdata.php on line 46
+[16-May-2018 23:26:49 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '[' in /home/rinx2639/public_html/tambahdata.php on line 46
+[16-May-2018 23:26:50 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '[' in /home/rinx2639/public_html/tambahdata.php on line 46
+[16-May-2018 23:27:16 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '[' in /home/rinx2639/public_html/tambahdata.php on line 46
+[16-May-2018 23:27:17 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '[' in /home/rinx2639/public_html/tambahdata.php on line 46
+[16-May-2018 23:27:18 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '[' in /home/rinx2639/public_html/tambahdata.php on line 46
+[16-May-2018 23:27:18 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '[' in /home/rinx2639/public_html/tambahdata.php on line 46
+[16-May-2018 23:27:18 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '[' in /home/rinx2639/public_html/tambahdata.php on line 46
+[16-May-2018 23:27:18 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '[' in /home/rinx2639/public_html/tambahdata.php on line 46
+[16-May-2018 23:27:18 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '[' in /home/rinx2639/public_html/tambahdata.php on line 46
+[16-May-2018 23:27:18 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '[' in /home/rinx2639/public_html/tambahdata.php on line 46
+[16-May-2018 23:27:19 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '[' in /home/rinx2639/public_html/tambahdata.php on line 46
+[16-May-2018 23:27:19 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '[' in /home/rinx2639/public_html/tambahdata.php on line 46
+[16-May-2018 23:27:19 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '[' in /home/rinx2639/public_html/tambahdata.php on line 46
+[16-May-2018 23:30:04 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tambahdata.php on line 51
+[16-May-2018 23:30:51 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tambahdata.php on line 41
+[16-May-2018 23:30:54 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tambahdata.php on line 41
+[16-May-2018 23:30:55 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tambahdata.php on line 41
+[16-May-2018 23:30:56 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tambahdata.php on line 41
+[16-May-2018 23:30:56 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tambahdata.php on line 41
+[16-May-2018 23:31:19 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tambahdata.php on line 51
+[16-May-2018 23:44:34 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tambahdata.php on line 48
+[17-May-2018 10:25:39 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tambahdata.php on line 48
+[17-May-2018 10:25:39 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tambahdata.php on line 57
+[17-May-2018 10:40:32 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tambahdata.php on line 44
+[17-May-2018 10:40:35 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tambahdata.php on line 44
+[17-May-2018 10:40:36 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tambahdata.php on line 44
+[17-May-2018 10:40:37 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tambahdata.php on line 44
+[17-May-2018 10:40:37 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tambahdata.php on line 44
+[17-May-2018 10:40:37 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tambahdata.php on line 44
+[17-May-2018 10:40:37 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tambahdata.php on line 44
+[17-May-2018 12:15:17 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tambahdata.php on line 38
+[17-May-2018 12:15:19 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tambahdata.php on line 38
+[17-May-2018 12:15:19 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tambahdata.php on line 38
+[17-May-2018 12:15:19 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tambahdata.php on line 38
+[17-May-2018 12:15:19 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tambahdata.php on line 38
+[17-May-2018 12:18:53 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tambahdata.php on line 38
+[17-May-2018 12:22:10 Asia/Jakarta] PHP Fatal error:  Cannot use object of type usr as array in /home/rinx2639/public_html/tambahdata.php on line 53
+[17-May-2018 12:22:12 Asia/Jakarta] PHP Fatal error:  Cannot use object of type usr as array in /home/rinx2639/public_html/tambahdata.php on line 53
+[17-May-2018 12:22:13 Asia/Jakarta] PHP Fatal error:  Cannot use object of type usr as array in /home/rinx2639/public_html/tambahdata.php on line 53
+[17-May-2018 12:22:14 Asia/Jakarta] PHP Fatal error:  Cannot use object of type usr as array in /home/rinx2639/public_html/tambahdata.php on line 53
+[17-May-2018 12:22:14 Asia/Jakarta] PHP Fatal error:  Cannot use object of type usr as array in /home/rinx2639/public_html/tambahdata.php on line 53
+[17-May-2018 12:22:14 Asia/Jakarta] PHP Fatal error:  Cannot use object of type usr as array in /home/rinx2639/public_html/tambahdata.php on line 53
+[17-May-2018 12:22:16 Asia/Jakarta] PHP Fatal error:  Cannot use object of type usr as array in /home/rinx2639/public_html/tambahdata.php on line 53
+[17-May-2018 12:24:34 Asia/Jakarta] PHP Fatal error:  Cannot use object of type usr as array in /home/rinx2639/public_html/tambahdata.php on line 53
+[17-May-2018 12:24:40 Asia/Jakarta] PHP Fatal error:  Cannot use object of type usr as array in /home/rinx2639/public_html/tambahdata.php on line 53
+[17-May-2018 12:24:44 Asia/Jakarta] PHP Fatal error:  Cannot use object of type usr as array in /home/rinx2639/public_html/tambahdata.php on line 53
+[17-May-2018 12:24:46 Asia/Jakarta] PHP Fatal error:  Cannot use object of type usr as array in /home/rinx2639/public_html/tambahdata.php on line 53
+[17-May-2018 12:24:46 Asia/Jakarta] PHP Fatal error:  Cannot use object of type usr as array in /home/rinx2639/public_html/tambahdata.php on line 53
+[17-May-2018 12:24:46 Asia/Jakarta] PHP Fatal error:  Cannot use object of type usr as array in /home/rinx2639/public_html/tambahdata.php on line 53
+[17-May-2018 12:25:07 Asia/Jakarta] PHP Fatal error:  Cannot use object of type usr as array in /home/rinx2639/public_html/tambahdata.php on line 53
+[17-May-2018 12:25:08 Asia/Jakarta] PHP Fatal error:  Cannot use object of type usr as array in /home/rinx2639/public_html/tambahdata.php on line 53
+[17-May-2018 12:25:38 Asia/Jakarta] PHP Fatal error:  Cannot use object of type usr as array in /home/rinx2639/public_html/tambahdata.php on line 53
+[18-May-2018 00:04:42 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tambahdata.php on line 38
+[18-May-2018 15:11:05 Asia/Jakarta] PHP Warning:  substr() expects at least 2 parameters, 1 given in /home/rinx2639/public_html/tambahdata.php on line 25
+[18-May-2018 15:11:13 Asia/Jakarta] PHP Warning:  substr() expects at least 2 parameters, 1 given in /home/rinx2639/public_html/tambahdata.php on line 25
+[18-May-2018 15:11:41 Asia/Jakarta] PHP Warning:  substr() expects at least 2 parameters, 1 given in /home/rinx2639/public_html/tambahdata.php on line 25
+[18-May-2018 15:11:50 Asia/Jakarta] PHP Warning:  substr() expects at least 2 parameters, 1 given in /home/rinx2639/public_html/tambahdata.php on line 25
+[18-May-2018 16:07:45 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/tambahdata.php on line 38
+[22-May-2018 08:03:49 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/rinx2639/public_html/gambar.php on line 8
