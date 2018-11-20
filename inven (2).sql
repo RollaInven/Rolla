@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 29, 2018 at 02:37 PM
+-- Generation Time: Nov 20, 2018 at 11:14 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 5.6.32
 
@@ -33,17 +33,52 @@ CREATE TABLE `barang` (
   `nama_barang` varchar(25) DEFAULT NULL,
   `harga_barang` int(11) DEFAULT NULL,
   `stok_barang` int(11) DEFAULT NULL,
-  `tmp_simpanbarang` varchar(20) DEFAULT NULL,
   `gambar_barang` tinytext,
-  `kategori_id_kategori` varchar(8) NOT NULL
+  `kategori_id_kategori` varchar(8) NOT NULL,
+  `simpan_id_simpan` varchar(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `barang`
 --
 
-INSERT INTO `barang` (`id_barang`, `nama_barang`, `harga_barang`, `stok_barang`, `tmp_simpanbarang`, `gambar_barang`, `kategori_id_kategori`) VALUES
-('09876', 'coba', 100000, 10, '002', 'assets/image_upload/a4efae8e4a76beaba60fc02a5837b13e.jpg', '04');
+INSERT INTO `barang` (`id_barang`, `nama_barang`, `harga_barang`, `stok_barang`, `gambar_barang`, `kategori_id_kategori`, `simpan_id_simpan`) VALUES
+('45', 'Pisau ', 34000, 1000106, 'assets/image_upload/pisau4.jpg', '01', '001');
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `barangmasuk`
+-- (See below for the actual view)
+--
+CREATE TABLE `barangmasuk` (
+`kode_masuk` varchar(8)
+,`tgl_masuk` datetime
+,`keterangan_masuk` tinytext
+,`supplier_id_supplier` varchar(8)
+,`users_id` int(11) unsigned
+,`id` int(11) unsigned
+,`ip_address` varchar(45)
+,`username` varchar(100)
+,`password` varchar(255)
+,`salt` varchar(255)
+,`email` varchar(254)
+,`activation_code` varchar(40)
+,`forgotten_password_code` varchar(40)
+,`forgotten_password_time` int(11) unsigned
+,`remember_code` varchar(40)
+,`created_on` int(11) unsigned
+,`last_login` int(11) unsigned
+,`active` tinyint(1) unsigned
+,`first_name` varchar(50)
+,`last_name` varchar(50)
+,`company` varchar(100)
+,`phone` varchar(20)
+,`id_supplier` varchar(8)
+,`nama_supplier` varchar(25)
+,`notelp_supplier` varchar(13)
+,`alamat_supplier` tinytext
+);
 
 -- --------------------------------------------------------
 
@@ -57,6 +92,14 @@ CREATE TABLE `barang_keluar` (
   `keterangan_keluar` tinytext,
   `users_id` int(11) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `barang_keluar`
+--
+
+INSERT INTO `barang_keluar` (`kode_keluar`, `tgl_keluar`, `keterangan_keluar`, `users_id`) VALUES
+('MSK001', '2018-06-28 14:54:26', NULL, 1),
+('MSK002', '2018-06-29 05:29:55', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -72,6 +115,19 @@ CREATE TABLE `barang_masuk` (
   `users_id` int(11) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `barang_masuk`
+--
+
+INSERT INTO `barang_masuk` (`kode_masuk`, `tgl_masuk`, `keterangan_masuk`, `supplier_id_supplier`, `users_id`) VALUES
+('MSK001', '2018-06-25 18:56:00', NULL, '001', 1),
+('MSK002', '2018-06-25 18:56:32', NULL, '001', 1),
+('MSK003', '2018-06-28 14:53:30', NULL, '001', 1),
+('MSK004', '2018-06-29 05:13:42', NULL, '001', 1),
+('MSK005', '2018-06-29 05:29:47', NULL, '001', 1),
+('MSK006', '2018-07-02 11:16:28', NULL, '001', 1),
+('MSK007', '2018-07-02 11:17:05', NULL, '001', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -86,6 +142,41 @@ CREATE TABLE `barang_retur` (
   `users_id` int(11) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `barang_retur`
+--
+
+INSERT INTO `barang_retur` (`kode_retur`, `tgl_retur`, `keterangan_retur`, `supplier_id_supplier`, `users_id`) VALUES
+('MSK001', '2018-06-28 14:53:51', 'pecah', '001', 1),
+('MSK002', '2018-06-28 14:53:52', 'pecah', '001', 1),
+('MSK003', '2018-06-29 05:30:31', 'udhd', '001', 1),
+('MSK004', '2018-07-02 11:14:57', 'barang hilang', '001', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `detailmasuk`
+-- (See below for the actual view)
+--
+CREATE TABLE `detailmasuk` (
+`iddetail_masuk` varchar(8)
+,`stok_masuk` int(11)
+,`barang_id_barang` varchar(8)
+,`barang_masuk_kode_masuk` varchar(8)
+,`id_barang` varchar(8)
+,`nama_barang` varchar(25)
+,`harga_barang` int(11)
+,`stok_barang` int(11)
+,`gambar_barang` tinytext
+,`kategori_id_kategori` varchar(8)
+,`simpan_id_simpan` varchar(8)
+,`kode_masuk` varchar(8)
+,`tgl_masuk` datetime
+,`keterangan_masuk` tinytext
+,`supplier_id_supplier` varchar(8)
+,`users_id` int(11) unsigned
+);
+
 -- --------------------------------------------------------
 
 --
@@ -98,6 +189,14 @@ CREATE TABLE `detail_keluar` (
   `barang_id_barang` varchar(8) NOT NULL,
   `barang_keluar_kode_keluar` varchar(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `detail_keluar`
+--
+
+INSERT INTO `detail_keluar` (`iddetail_keluar`, `stok_keluar`, `barang_id_barang`, `barang_keluar_kode_keluar`) VALUES
+('BRG001', 1, '45', 'MSK001'),
+('BRG002', 2, '45', 'MSK002');
 
 -- --------------------------------------------------------
 
@@ -112,6 +211,19 @@ CREATE TABLE `detail_masuk` (
   `barang_masuk_kode_masuk` varchar(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `detail_masuk`
+--
+
+INSERT INTO `detail_masuk` (`iddetail_masuk`, `stok_masuk`, `barang_id_barang`, `barang_masuk_kode_masuk`) VALUES
+('BRG001', 7, '45', 'MSK001'),
+('BRG002', 7, '45', 'MSK002'),
+('BRG003', 12, '45', 'MSK003'),
+('BRG004', 1, '45', 'MSK004'),
+('BRG005', 5, '45', 'MSK005'),
+('BRG006', 100, '45', 'MSK006'),
+('BRG007', 1000000, '45', 'MSK007');
+
 -- --------------------------------------------------------
 
 --
@@ -125,6 +237,16 @@ CREATE TABLE `detail_retur` (
   `barang_id_barang` varchar(8) NOT NULL,
   `barang_retur_kode_retur` varchar(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `detail_retur`
+--
+
+INSERT INTO `detail_retur` (`iddetail_retur`, `stok_retur`, `keterangan_barangretur`, `barang_id_barang`, `barang_retur_kode_retur`) VALUES
+('BRG001', 12, 'pecah', '45', 'MSK001'),
+('BRG002', 12, 'pecah', '45', 'MSK002'),
+('BRG003', 1, 'udhd', '45', 'MSK003'),
+('BRG004', 1, 'barang hilang', '45', 'MSK004');
 
 -- --------------------------------------------------------
 
@@ -191,12 +313,32 @@ CREATE TABLE `namakategori` (
 ,`nama_barang` varchar(25)
 ,`harga_barang` int(11)
 ,`stok_barang` int(11)
-,`tmp_simpanbarang` varchar(20)
 ,`gambar_barang` tinytext
 ,`kategori_id_kategori` varchar(8)
+,`simpan_id_simpan` varchar(8)
 ,`id_kategori` varchar(8)
 ,`nama_kategori` varchar(25)
+,`id_simpan` varchar(8)
+,`nama_tmpsimpan` varchar(25)
 );
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `simpan`
+--
+
+CREATE TABLE `simpan` (
+  `id_simpan` varchar(8) NOT NULL,
+  `nama_tmpsimpan` varchar(25) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `simpan`
+--
+
+INSERT INTO `simpan` (`id_simpan`, `nama_tmpsimpan`) VALUES
+('001', 'A01');
 
 -- --------------------------------------------------------
 
@@ -249,7 +391,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
-(1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1527587457, 1, 'Admin', 'istrator', 'ADMIN', '0');
+(1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1542247543, 1, 'Admin', 'istrator', 'ADMIN', '0');
 
 -- --------------------------------------------------------
 
@@ -274,11 +416,29 @@ INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure for view `barangmasuk`
+--
+DROP TABLE IF EXISTS `barangmasuk`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `barangmasuk`  AS  select `barang_masuk`.`kode_masuk` AS `kode_masuk`,`barang_masuk`.`tgl_masuk` AS `tgl_masuk`,`barang_masuk`.`keterangan_masuk` AS `keterangan_masuk`,`barang_masuk`.`supplier_id_supplier` AS `supplier_id_supplier`,`barang_masuk`.`users_id` AS `users_id`,`users`.`id` AS `id`,`users`.`ip_address` AS `ip_address`,`users`.`username` AS `username`,`users`.`password` AS `password`,`users`.`salt` AS `salt`,`users`.`email` AS `email`,`users`.`activation_code` AS `activation_code`,`users`.`forgotten_password_code` AS `forgotten_password_code`,`users`.`forgotten_password_time` AS `forgotten_password_time`,`users`.`remember_code` AS `remember_code`,`users`.`created_on` AS `created_on`,`users`.`last_login` AS `last_login`,`users`.`active` AS `active`,`users`.`first_name` AS `first_name`,`users`.`last_name` AS `last_name`,`users`.`company` AS `company`,`users`.`phone` AS `phone`,`supplier`.`id_supplier` AS `id_supplier`,`supplier`.`nama_supplier` AS `nama_supplier`,`supplier`.`notelp_supplier` AS `notelp_supplier`,`supplier`.`alamat_supplier` AS `alamat_supplier` from ((`barang_masuk` join `users`) join `supplier`) where ((`barang_masuk`.`users_id` = `users`.`id`) and (`barang_masuk`.`supplier_id_supplier` = `supplier`.`id_supplier`)) ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `detailmasuk`
+--
+DROP TABLE IF EXISTS `detailmasuk`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `detailmasuk`  AS  select `detail_masuk`.`iddetail_masuk` AS `iddetail_masuk`,`detail_masuk`.`stok_masuk` AS `stok_masuk`,`detail_masuk`.`barang_id_barang` AS `barang_id_barang`,`detail_masuk`.`barang_masuk_kode_masuk` AS `barang_masuk_kode_masuk`,`barang`.`id_barang` AS `id_barang`,`barang`.`nama_barang` AS `nama_barang`,`barang`.`harga_barang` AS `harga_barang`,`barang`.`stok_barang` AS `stok_barang`,`barang`.`gambar_barang` AS `gambar_barang`,`barang`.`kategori_id_kategori` AS `kategori_id_kategori`,`barang`.`simpan_id_simpan` AS `simpan_id_simpan`,`barang_masuk`.`kode_masuk` AS `kode_masuk`,`barang_masuk`.`tgl_masuk` AS `tgl_masuk`,`barang_masuk`.`keterangan_masuk` AS `keterangan_masuk`,`barang_masuk`.`supplier_id_supplier` AS `supplier_id_supplier`,`barang_masuk`.`users_id` AS `users_id` from ((`detail_masuk` join `barang`) join `barang_masuk`) where ((`detail_masuk`.`barang_id_barang` = `barang`.`id_barang`) and (`detail_masuk`.`barang_masuk_kode_masuk` = `barang_masuk`.`kode_masuk`)) ;
+
+-- --------------------------------------------------------
+
+--
 -- Structure for view `namakategori`
 --
 DROP TABLE IF EXISTS `namakategori`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `namakategori`  AS  select `barang`.`id_barang` AS `id_barang`,`barang`.`nama_barang` AS `nama_barang`,`barang`.`harga_barang` AS `harga_barang`,`barang`.`stok_barang` AS `stok_barang`,`barang`.`tmp_simpanbarang` AS `tmp_simpanbarang`,`barang`.`gambar_barang` AS `gambar_barang`,`barang`.`kategori_id_kategori` AS `kategori_id_kategori`,`kategori`.`id_kategori` AS `id_kategori`,`kategori`.`nama_kategori` AS `nama_kategori` from (`barang` join `kategori`) where (`barang`.`kategori_id_kategori` = `kategori`.`id_kategori`) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `namakategori`  AS  select `barang`.`id_barang` AS `id_barang`,`barang`.`nama_barang` AS `nama_barang`,`barang`.`harga_barang` AS `harga_barang`,`barang`.`stok_barang` AS `stok_barang`,`barang`.`gambar_barang` AS `gambar_barang`,`barang`.`kategori_id_kategori` AS `kategori_id_kategori`,`barang`.`simpan_id_simpan` AS `simpan_id_simpan`,`kategori`.`id_kategori` AS `id_kategori`,`kategori`.`nama_kategori` AS `nama_kategori`,`simpan`.`id_simpan` AS `id_simpan`,`simpan`.`nama_tmpsimpan` AS `nama_tmpsimpan` from ((`barang` join `kategori`) join `simpan`) where ((`barang`.`kategori_id_kategori` = `kategori`.`id_kategori`) and (`barang`.`simpan_id_simpan` = `simpan`.`id_simpan`)) ;
 
 --
 -- Indexes for dumped tables
@@ -289,7 +449,8 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 ALTER TABLE `barang`
   ADD PRIMARY KEY (`id_barang`),
-  ADD KEY `fk_barang_kategori_idx` (`kategori_id_kategori`);
+  ADD KEY `fk_barang_kategori_idx` (`kategori_id_kategori`),
+  ADD KEY `fk_barang_simpan1_idx` (`simpan_id_simpan`);
 
 --
 -- Indexes for table `barang_keluar`
@@ -357,6 +518,12 @@ ALTER TABLE `login_attempts`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `simpan`
+--
+ALTER TABLE `simpan`
+  ADD PRIMARY KEY (`id_simpan`);
+
+--
 -- Indexes for table `supplier`
 --
 ALTER TABLE `supplier`
@@ -378,34 +545,6 @@ ALTER TABLE `users_groups`
   ADD KEY `fk_users_groups_groups1_idx` (`group_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `groups`
---
-ALTER TABLE `groups`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `login_attempts`
---
-ALTER TABLE `login_attempts`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `users_groups`
---
-ALTER TABLE `users_groups`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
 -- Constraints for dumped tables
 --
 
@@ -413,7 +552,8 @@ ALTER TABLE `users_groups`
 -- Constraints for table `barang`
 --
 ALTER TABLE `barang`
-  ADD CONSTRAINT `fk_barang_kategori` FOREIGN KEY (`kategori_id_kategori`) REFERENCES `kategori` (`id_kategori`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_barang_kategori` FOREIGN KEY (`kategori_id_kategori`) REFERENCES `kategori` (`id_kategori`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_barang_simpan1` FOREIGN KEY (`simpan_id_simpan`) REFERENCES `simpan` (`id_simpan`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `barang_keluar`
