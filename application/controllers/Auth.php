@@ -33,22 +33,41 @@ class Auth extends CI_Controller
 		}
 		else if (!$this->ion_auth->is_admin()) // remove this elseif if you want to enable this for non-admins
 		{
+
+		// 	$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
+
+		// 	//list the users
+		// 	 $this->data['users'] = $this->ion_auth->users()->result();
+		// 	 foreach ($this->data['users'] as $k => $user)
+		// 	{
+		// 	 	$this->data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
+		// 	}
+
+			//$this->load->view('PetugasView/index');
+
+			//$this->_render_page('PetugasView/Index', $this->data);
+			// var_dump($data);
 			// redirect them to the home page because they must be an administrator to view this
 			return show_error('You must be an administrator to view this page.');
+
 		}
 		else
 		{
 			// set the flash data error message if there is one
-			$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
+		 	$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
 
-			//list the users
+		//list the users
 			$this->data['users'] = $this->ion_auth->users()->result();
-			foreach ($this->data['users'] as $k => $user)
-			{
-				$this->data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
+		 	foreach ($this->data['users'] as $k => $user)
+		 	{
+		 		$this->data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
 			}
 
-			$this->_render_page('auth/index', $this->data);
+		// 	var_dump($data);
+		 		$this->_render_page('auth/index', $this->data);
+			
+
+			
 		}
 	}
 
@@ -68,13 +87,19 @@ class Auth extends CI_Controller
 			// check to see if the user is logging in
 			// check for "remember me"
 			$remember = (bool)$this->input->post('remember');
+			$a = $this->ion_auth->login($this->input->post('identity'), $this->input->post('password'), $remember);
 
-			if ($this->ion_auth->login($this->input->post('identity'), $this->input->post('password'), $remember))
+			if ($a['a'])
 			{
+				$this->session->set_flashdata('message', $this->ion_auth->messages());
+
+
+				redirect('/', 'refresh');
+				var_dump($a);
+				
 				//if the login is successful
 				//redirect them back to the home page
-				$this->session->set_flashdata('message', $this->ion_auth->messages());
-				redirect('/', 'refresh');
+				
 			}
 			else
 			{

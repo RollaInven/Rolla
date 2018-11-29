@@ -8,7 +8,7 @@
           <thead>
             <tr>
               <th>No</th>
-              <th>ID Kategori</th>
+              <!-- <th>ID Kategori</th> -->
               <th>Nama Kategori</th>
             </tr>
           </thead>
@@ -17,7 +17,7 @@
             foreach ($daftarkategori as $kategori) { ?>
             <tr>
               <td><?php echo $no ?></td>
-              <td><?php echo $kategori->id_kategori ?></td>
+              <!-- <td><?php echo $kategori->id_kategori ?></td> -->
               <td><?php echo $kategori->nama_kategori ?></td>
               <td>
                 <a href="<?php echo base_url().'Kategori/edit/'.$kategori->id_kategori?>" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-pencil"></span> Edit </a> 

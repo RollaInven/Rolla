@@ -51,9 +51,9 @@
                 <li>
                     <a href="<?php echo base_url()?>Laporan/list_keluar">Keluar</a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="<?php echo base_url()?>Laporan/list_retur">Retur</a>
-                </li>
+                </li> -->
             </ul>
     </li>    
 </ul>

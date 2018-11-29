@@ -16,7 +16,7 @@
               <th>Gambar</th>
               <th>Kategori</th>
               <th>Tanggal Retur</th>
-              <th>Nama Supplier</th>
+              <!-- <th>Nama Supplier</th> -->
               <th>Nama Pegawai</th>
             </tr>
           </thead>
@@ -33,11 +33,11 @@
                   <td><?php echo $Laporan->nama_barang ?></td>
                   <td><?php echo $Laporan->nama_tmpsimpan ?></td>
                   <td>
-                    <img class="img-thumbnail" src="<?php echo base_url().$Laporan->gambar_barang?>"/>
+                    <img class="img-thumbnail" width="350px" height="197px" src="<?php echo base_url().$Laporan->gambar_barang?>"/>
                   </td>
                   <td><?php echo $Laporan->nama_kategori ?></td>
                   <td><?php echo $Laporan->tgl_retur ?></td>
-                  <td><?php echo $Laporan->nama_supplier ?></td>
+                  <!-- <td><?php echo $Laporan->nama_supplier ?></td> -->
                   <td><?php echo $Laporan->username ?></td>
                 </tr>
               </div>

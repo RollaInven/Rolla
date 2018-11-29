@@ -8,7 +8,7 @@
           <thead>
             <tr>
               <th>No</th>
-              <th>ID Tempat Simpan</th>
+              <!-- <th>ID Tempat Simpan</th> -->
               <th>Nama Tempat Simpan</th>
             </tr>
           </thead>
@@ -17,7 +17,7 @@
             foreach ($daftarsimpan as $simpan) { ?>
             <tr>
               <td><?php echo $no ?></td>
-              <td><?php echo $simpan->id_simpan ?></td>
+              <!-- <td><?php echo $simpan->id_simpan ?></td> -->
               <td><?php echo $simpan->nama_tmpsimpan ?></td>
               <td>
                 <a href="<?php echo base_url().'Simpan/edit/'.$simpan->id_simpan?>" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-pencil"></span> Edit </a> 

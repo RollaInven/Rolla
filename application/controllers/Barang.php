@@ -16,7 +16,13 @@ class barang extends CI_Controller{
             
 		);
 
-		$this->load->view('Index', $data);
+        if($this->ion_auth->is_admin()){
+                $this->load->view('Index', $data);
+        }else{
+                $this->load->view('PetugasView/Index', $data);
+        }
+
+		
 	}
 
 	public function input(){
@@ -35,6 +41,8 @@ class barang extends CI_Controller{
         $config['upload_path']      = 'assets/image_upload/';
         $config['allowed_types']    = 'jpg|png|jpeg';
         $config['max_size']         = '2048';
+        // $config['max_width']        = '400';
+        // $config['max_height']       = '200';
             $this->load->library('upload', $config);
             $this->upload->initialize($config); 
         if (!$this->upload->do_upload('gambar')) {
@@ -47,6 +55,7 @@ class barang extends CI_Controller{
             );
             $this->load->view('Index', $error);
         }else{
+
         $data = array(
             'id_barang'     => $this->input->post('kode'),
             'nama_barang' => $this->input->post('nama'),
@@ -87,6 +96,8 @@ class barang extends CI_Controller{
             $config['upload_path']      = 'assets/image_upload/';
             $config['allowed_types']    = 'jpg|png|jpeg';
             $config['max_size']         = '2048';
+            // $config['max_width']            = '400';
+            // $config['max_height']           = '200';
                 $this->load->library('upload', $config);
                 $this->upload->initialize($config); 
             if (!$this->upload->do_upload('gambar')) {
@@ -111,7 +122,7 @@ class barang extends CI_Controller{
             $this->db->where('id_barang',$id_barang);
             $this->db->update('barang',$data);
             redirect('Barang/list_barang');
+            }
         }
-}
 }
 ?>

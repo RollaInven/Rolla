@@ -1069,7 +1069,9 @@ class Ion_auth_model extends CI_Model
 				$this->trigger_events(array('post_login', 'post_login_successful'));
 				$this->set_message('login_successful');
 
-				return TRUE;
+				$b = $this->db->query("SELECT groups.name FROM groups,users_groups,users  WHERE users_groups.group_id = groups.id AND users_groups.user_id = users.id AND users.email = '$identity'" );
+				$a = array('a'=>TRUE,'b'=>$b->row());	
+				return $a;
 			}
 		}
 

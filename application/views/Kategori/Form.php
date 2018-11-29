@@ -6,12 +6,12 @@
     <div class="bs-example4" data-example-id="simple-responsive-table">
       <div class="table-responsive">
         <table class="table">
-          <tr>
+          <!-- <tr>
             <td>
               <label class="control-label col-lg-3" style="color: #000000; font-size: medium;">Id Kategori</label>
                   <input type="text" name="id_kategori" placeholder="id_kategori" style="color: #000;">
             </td>
-          </tr>
+          </tr> -->
           <tr>
             <td>
               <label class="control-label col-lg-3" style="color: #000000; font-size: medium;">Nama Kategori</label>

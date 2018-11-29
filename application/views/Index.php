@@ -57,7 +57,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <!-- /.navbar-header -->
             <ul class="nav navbar-nav navbar-right">
 			    <li class="dropdown">
-                    <a href="#" class="dropdown-toggle avatar" data-toggle="dropdown"><img src="<?php echo base_url()?>assets/images/img1.png"><span class="badge"></span></a>
+                    <a href="#" class="dropdown-toggle avatar" data-toggle="dropdown" aria-expanded="true"><img src="<?php echo base_url()?>assets/images/img1.png"><span class="badge"></span></a>
                     <ul class="dropdown-menu">
                         <li class="dropdown-menu-header text-center">
                             <strong>Settings</strong>

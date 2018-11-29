@@ -15,7 +15,7 @@
               <th>Gambar</th>
               <th>Kategori</th>
               <th>Tanggal Masuk</th>
-              <th>Nama Supplier</th>
+              <!-- <th>Nama Supplier</th> -->
               <th>Nama Pegawai</th>
             </tr>
           </thead>
@@ -35,7 +35,7 @@
                   </td>
                   <td><?php echo $Laporan->nama_kategori ?></td>
                   <td><?php echo $Laporan->tgl_masuk ?></td>
-                  <td><?php echo $Laporan->nama_supplier ?></td>
+                  <!-- <td><?php echo $Laporan->nama_supplier ?></td> -->
                   <td><?php echo $Laporan->username ?></td>
                 </tr>
               </div>

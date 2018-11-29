@@ -6,12 +6,12 @@
     <div class="bs-example4" data-example-id="simple-responsive-table">
       <div class="table-responsive">
         <table class="table">
-          <tr>
+          <!-- <tr>
             <td>
               <label class="control-label col-lg-3" style="color: #000000; font-size: medium;">Id Tempat</label>
                   <input type="text" name="id_simpan" placeholder="id_tempat" style="color: #000;">
             </td>
-          </tr>
+          </tr> -->
           <tr>
             <td>
               <label class="control-label col-lg-3" style="color: #000000; font-size: medium;">Nama Tempat</label>

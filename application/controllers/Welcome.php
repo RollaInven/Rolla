@@ -2,7 +2,17 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Welcome extends CI_Controller {
+public function __construct()
+	{
+		parent::__construct();
+		$this->load->database();
+		$this->load->library(array('ion_auth', 'form_validation'));
+		$this->load->helper(array('url', 'language'));
 
+		$this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
+
+		$this->lang->load('auth');
+	}
 	/**
 	 * Index Page for this controller.
 	 *
@@ -19,7 +29,17 @@ class Welcome extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index(){
-		$data = array('body' => 'Home');
-		$this->load->view('Index', $data);
+
+		if($this->ion_auth->is_admin()){
+			$data = array('body' => 'Home');
+			$this->load->view('Index', $data);
+		}else{
+			$data = array('body'=>'PetugasView/Home');
+			$this->load->view('PetugasView/index',$data);
+		}
+		
+		//var_dump);
+		//var_dump($this->ion_auth->is_members());
+
 	}
 }

@@ -32,7 +32,7 @@
                   <td><?php echo $d->nama_tmpsimpan ?></td>
                   <td><?php echo $d->nama_kategori;?></td>
                   <td>
-                    <img class="img-thumbnail" src="<?php echo base_url().$d->gambar_barang?>"/>
+                    <img style="width: 400px; height: 200px" class="img-thumbnail" src="<?php echo base_url().$d->gambar_barang?>"/>
                   </td>
                   <td>
                     <a href="<?php echo base_url().'Barang/edit/'.$d->id_barang?>" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-pencil"></span> Edit </a> 

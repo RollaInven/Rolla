@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 20, 2018 at 11:14 AM
+-- Generation Time: Nov 29, 2018 at 03:13 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 5.6.32
 
@@ -34,8 +34,8 @@ CREATE TABLE `barang` (
   `harga_barang` int(11) DEFAULT NULL,
   `stok_barang` int(11) DEFAULT NULL,
   `gambar_barang` tinytext,
-  `kategori_id_kategori` varchar(8) NOT NULL,
-  `simpan_id_simpan` varchar(8) NOT NULL
+  `kategori_id_kategori` int(8) NOT NULL,
+  `simpan_id_simpan` int(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -43,7 +43,12 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`id_barang`, `nama_barang`, `harga_barang`, `stok_barang`, `gambar_barang`, `kategori_id_kategori`, `simpan_id_simpan`) VALUES
-('45', 'Pisau ', 34000, 1000106, 'assets/image_upload/pisau4.jpg', '01', '001');
+('1001', 'Rolla 10 Batik Sibori', 325000, 10, 'assets/image_upload/IMG-20181122-WA0008.jpg', 1, 3),
+('3001', 'Ublak Jember', 85000, 10, 'assets/image_upload/IMG-20181122-WA0001.jpg', 3, 1),
+('3002', 'Boneka Batik bji Khas Dae', 75000, 10, 'assets/image_upload/IMG-20181122-WA00041.jpg', 3, 1),
+('4001', 'Kopi Rolla Robusta 150gr', 30000, 5, 'assets/image_upload/IMG-20181122-WA0005.jpg', 4, 2),
+('4002', 'Kopi Rolla Robusta Mandig', 35000, 5, 'assets/image_upload/IMG-20181122-WA0006.jpg', 4, 2),
+('4003', 'Kopi', 37000, 23, 'assets/image_upload/IMG-20181122-WA00051.jpg', 4, 2);
 
 -- --------------------------------------------------------
 
@@ -52,7 +57,7 @@ INSERT INTO `barang` (`id_barang`, `nama_barang`, `harga_barang`, `stok_barang`,
 -- (See below for the actual view)
 --
 CREATE TABLE `barangmasuk` (
-`kode_masuk` varchar(8)
+`kode_masuk` int(8)
 ,`tgl_masuk` datetime
 ,`keterangan_masuk` tinytext
 ,`supplier_id_supplier` varchar(8)
@@ -87,19 +92,11 @@ CREATE TABLE `barangmasuk` (
 --
 
 CREATE TABLE `barang_keluar` (
-  `kode_keluar` varchar(8) NOT NULL,
+  `kode_keluar` int(8) NOT NULL,
   `tgl_keluar` datetime DEFAULT NULL,
   `keterangan_keluar` tinytext,
   `users_id` int(11) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `barang_keluar`
---
-
-INSERT INTO `barang_keluar` (`kode_keluar`, `tgl_keluar`, `keterangan_keluar`, `users_id`) VALUES
-('MSK001', '2018-06-28 14:54:26', NULL, 1),
-('MSK002', '2018-06-29 05:29:55', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -108,25 +105,12 @@ INSERT INTO `barang_keluar` (`kode_keluar`, `tgl_keluar`, `keterangan_keluar`, `
 --
 
 CREATE TABLE `barang_masuk` (
-  `kode_masuk` varchar(8) NOT NULL,
+  `kode_masuk` int(8) NOT NULL,
   `tgl_masuk` datetime DEFAULT NULL,
   `keterangan_masuk` tinytext,
   `supplier_id_supplier` varchar(8) NOT NULL,
   `users_id` int(11) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `barang_masuk`
---
-
-INSERT INTO `barang_masuk` (`kode_masuk`, `tgl_masuk`, `keterangan_masuk`, `supplier_id_supplier`, `users_id`) VALUES
-('MSK001', '2018-06-25 18:56:00', NULL, '001', 1),
-('MSK002', '2018-06-25 18:56:32', NULL, '001', 1),
-('MSK003', '2018-06-28 14:53:30', NULL, '001', 1),
-('MSK004', '2018-06-29 05:13:42', NULL, '001', 1),
-('MSK005', '2018-06-29 05:29:47', NULL, '001', 1),
-('MSK006', '2018-07-02 11:16:28', NULL, '001', 1),
-('MSK007', '2018-07-02 11:17:05', NULL, '001', 1);
 
 -- --------------------------------------------------------
 
@@ -142,16 +126,6 @@ CREATE TABLE `barang_retur` (
   `users_id` int(11) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `barang_retur`
---
-
-INSERT INTO `barang_retur` (`kode_retur`, `tgl_retur`, `keterangan_retur`, `supplier_id_supplier`, `users_id`) VALUES
-('MSK001', '2018-06-28 14:53:51', 'pecah', '001', 1),
-('MSK002', '2018-06-28 14:53:52', 'pecah', '001', 1),
-('MSK003', '2018-06-29 05:30:31', 'udhd', '001', 1),
-('MSK004', '2018-07-02 11:14:57', 'barang hilang', '001', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -159,18 +133,18 @@ INSERT INTO `barang_retur` (`kode_retur`, `tgl_retur`, `keterangan_retur`, `supp
 -- (See below for the actual view)
 --
 CREATE TABLE `detailmasuk` (
-`iddetail_masuk` varchar(8)
+`iddetail_masuk` int(8)
 ,`stok_masuk` int(11)
 ,`barang_id_barang` varchar(8)
-,`barang_masuk_kode_masuk` varchar(8)
+,`barang_masuk_kode_masuk` int(8)
 ,`id_barang` varchar(8)
 ,`nama_barang` varchar(25)
 ,`harga_barang` int(11)
 ,`stok_barang` int(11)
 ,`gambar_barang` tinytext
-,`kategori_id_kategori` varchar(8)
-,`simpan_id_simpan` varchar(8)
-,`kode_masuk` varchar(8)
+,`kategori_id_kategori` int(8)
+,`simpan_id_simpan` int(8)
+,`kode_masuk` int(8)
 ,`tgl_masuk` datetime
 ,`keterangan_masuk` tinytext
 ,`supplier_id_supplier` varchar(8)
@@ -184,19 +158,34 @@ CREATE TABLE `detailmasuk` (
 --
 
 CREATE TABLE `detail_keluar` (
-  `iddetail_keluar` varchar(8) NOT NULL,
-  `stok_keluar` int(11) DEFAULT NULL,
+  `iddetail_keluar` int(8) NOT NULL,
+  `tanggal` date NOT NULL,
   `barang_id_barang` varchar(8) NOT NULL,
-  `barang_keluar_kode_keluar` varchar(8) NOT NULL
+  `stok_keluar` int(11) DEFAULT NULL,
+  `barang_keluar_kode_keluar` int(11) DEFAULT NULL,
+  `keterangan` text,
+  `user_id_keluar` int(11) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `detail_keluar`
 --
 
-INSERT INTO `detail_keluar` (`iddetail_keluar`, `stok_keluar`, `barang_id_barang`, `barang_keluar_kode_keluar`) VALUES
-('BRG001', 1, '45', 'MSK001'),
-('BRG002', 2, '45', 'MSK002');
+INSERT INTO `detail_keluar` (`iddetail_keluar`, `tanggal`, `barang_id_barang`, `stok_keluar`, `barang_keluar_kode_keluar`, `keterangan`, `user_id_keluar`) VALUES
+(1, '2018-11-29', '3001', 1, NULL, NULL, 5);
+
+--
+-- Triggers `detail_keluar`
+--
+DELIMITER $$
+CREATE TRIGGER `stok_keluar` AFTER INSERT ON `detail_keluar` FOR EACH ROW UPDATE
+	barang
+SET
+	stok_barang = stok_barang - NEW.stok_keluar
+WHERE
+	id_barang = NEW.barang_id_barang
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -205,24 +194,36 @@ INSERT INTO `detail_keluar` (`iddetail_keluar`, `stok_keluar`, `barang_id_barang
 --
 
 CREATE TABLE `detail_masuk` (
-  `iddetail_masuk` varchar(8) NOT NULL,
-  `stok_masuk` int(11) DEFAULT NULL,
+  `iddetail_masuk` int(8) NOT NULL,
+  `tanggal` date NOT NULL,
   `barang_id_barang` varchar(8) NOT NULL,
-  `barang_masuk_kode_masuk` varchar(8) NOT NULL
+  `stok_masuk` int(11) NOT NULL,
+  `barang_masuk_kode_masuk` int(8) DEFAULT NULL,
+  `keterangan` text,
+  `user_id` int(11) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `detail_masuk`
 --
 
-INSERT INTO `detail_masuk` (`iddetail_masuk`, `stok_masuk`, `barang_id_barang`, `barang_masuk_kode_masuk`) VALUES
-('BRG001', 7, '45', 'MSK001'),
-('BRG002', 7, '45', 'MSK002'),
-('BRG003', 12, '45', 'MSK003'),
-('BRG004', 1, '45', 'MSK004'),
-('BRG005', 5, '45', 'MSK005'),
-('BRG006', 100, '45', 'MSK006'),
-('BRG007', 1000000, '45', 'MSK007');
+INSERT INTO `detail_masuk` (`iddetail_masuk`, `tanggal`, `barang_id_barang`, `stok_masuk`, `barang_masuk_kode_masuk`, `keterangan`, `user_id`) VALUES
+(1, '2018-11-29', '3002', 5, NULL, NULL, 5),
+(2, '2018-11-29', '3002', 3, NULL, NULL, 5),
+(3, '2018-11-29', '3001', 5, NULL, NULL, 5);
+
+--
+-- Triggers `detail_masuk`
+--
+DELIMITER $$
+CREATE TRIGGER `stok_masuk` AFTER INSERT ON `detail_masuk` FOR EACH ROW UPDATE 
+	barang
+SET 
+	stok_barang = stok_barang+NEW.stok_masuk
+WHERE
+	id_barang = NEW.barang_id_barang
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -237,16 +238,6 @@ CREATE TABLE `detail_retur` (
   `barang_id_barang` varchar(8) NOT NULL,
   `barang_retur_kode_retur` varchar(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `detail_retur`
---
-
-INSERT INTO `detail_retur` (`iddetail_retur`, `stok_retur`, `keterangan_barangretur`, `barang_id_barang`, `barang_retur_kode_retur`) VALUES
-('BRG001', 12, 'pecah', '45', 'MSK001'),
-('BRG002', 12, 'pecah', '45', 'MSK002'),
-('BRG003', 1, 'udhd', '45', 'MSK003'),
-('BRG004', 1, 'barang hilang', '45', 'MSK004');
 
 -- --------------------------------------------------------
 
@@ -275,7 +266,7 @@ INSERT INTO `groups` (`id`, `name`, `description`) VALUES
 --
 
 CREATE TABLE `kategori` (
-  `id_kategori` varchar(8) NOT NULL,
+  `id_kategori` int(8) NOT NULL,
   `nama_kategori` varchar(25) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -284,10 +275,12 @@ CREATE TABLE `kategori` (
 --
 
 INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES
-('01', 'Alat Dapur'),
-('02', 'Kamar Mandi'),
-('03', 'Kamar Tidur'),
-('04', 'Alat Kebersihan');
+(1, 'Kain Batik'),
+(2, 'Aksesoris'),
+(3, 'Kerajinan'),
+(4, 'Kopi'),
+(6, 'Alat Sholat'),
+(8, 'Pakaian');
 
 -- --------------------------------------------------------
 
@@ -314,11 +307,11 @@ CREATE TABLE `namakategori` (
 ,`harga_barang` int(11)
 ,`stok_barang` int(11)
 ,`gambar_barang` tinytext
-,`kategori_id_kategori` varchar(8)
-,`simpan_id_simpan` varchar(8)
-,`id_kategori` varchar(8)
+,`kategori_id_kategori` int(8)
+,`simpan_id_simpan` int(8)
+,`id_kategori` int(8)
 ,`nama_kategori` varchar(25)
-,`id_simpan` varchar(8)
+,`id_simpan` int(8)
 ,`nama_tmpsimpan` varchar(25)
 );
 
@@ -329,7 +322,7 @@ CREATE TABLE `namakategori` (
 --
 
 CREATE TABLE `simpan` (
-  `id_simpan` varchar(8) NOT NULL,
+  `id_simpan` int(8) NOT NULL,
   `nama_tmpsimpan` varchar(25) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -338,7 +331,11 @@ CREATE TABLE `simpan` (
 --
 
 INSERT INTO `simpan` (`id_simpan`, `nama_tmpsimpan`) VALUES
-('001', 'A01');
+(1, 'A01'),
+(2, 'A02'),
+(3, 'A03'),
+(4, 'A04'),
+(5, 'A05');
 
 -- --------------------------------------------------------
 
@@ -391,7 +388,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
-(1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1542247543, 1, 'Admin', 'istrator', 'ADMIN', '0');
+(1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1543500114, 1, 'Admin', 'istrator', 'ADMIN', '0'),
+(4, '::1', 'aku@gmail.com', '$2y$08$O6ncBJqXRpKLxEG2YH4cW.PaRqJn.cDY5Pw46wGohDh/xLFrp.Obu', NULL, 'aku@gmail.com', NULL, NULL, NULL, NULL, 1543230265, 1543287588, 1, 'aku', 'aku', 'admin', '082245471019'),
+(5, '::1', 'saya@gmail.com', '$2y$08$tPjYhFQ/2nJ06vFZ/vaO2.5T/5eTT61/NVPmn/kfe3aMBu9gFrwZe', NULL, 'saya@gmail.com', NULL, NULL, NULL, NULL, 1543230292, 1543500139, 1, 'saya', 'saya', 'admin', '087755706925');
 
 -- --------------------------------------------------------
 
@@ -411,7 +410,9 @@ CREATE TABLE `users_groups` (
 
 INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
 (1, 1, 1),
-(2, 1, 2);
+(2, 1, 2),
+(3, 4, 2),
+(4, 5, 2);
 
 -- --------------------------------------------------------
 
@@ -481,7 +482,7 @@ ALTER TABLE `barang_retur`
 ALTER TABLE `detail_keluar`
   ADD PRIMARY KEY (`iddetail_keluar`),
   ADD KEY `fk_detail_keluar_barang1_idx` (`barang_id_barang`),
-  ADD KEY `fk_detail_keluar_barang_keluar1_idx` (`barang_keluar_kode_keluar`);
+  ADD KEY `user_keluar` (`user_id_keluar`);
 
 --
 -- Indexes for table `detail_masuk`
@@ -489,7 +490,8 @@ ALTER TABLE `detail_keluar`
 ALTER TABLE `detail_masuk`
   ADD PRIMARY KEY (`iddetail_masuk`),
   ADD KEY `fk_detail_masuk_barang1_idx` (`barang_id_barang`),
-  ADD KEY `fk_detail_masuk_barang_masuk1_idx` (`barang_masuk_kode_masuk`);
+  ADD KEY `fk_detail_masuk_barang_masuk1_idx` (`barang_masuk_kode_masuk`),
+  ADD KEY `user_fk` (`user_id`);
 
 --
 -- Indexes for table `detail_retur`
@@ -545,6 +547,64 @@ ALTER TABLE `users_groups`
   ADD KEY `fk_users_groups_groups1_idx` (`group_id`);
 
 --
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `barang_keluar`
+--
+ALTER TABLE `barang_keluar`
+  MODIFY `kode_keluar` int(8) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `barang_masuk`
+--
+ALTER TABLE `barang_masuk`
+  MODIFY `kode_masuk` int(8) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `detail_keluar`
+--
+ALTER TABLE `detail_keluar`
+  MODIFY `iddetail_keluar` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `detail_masuk`
+--
+ALTER TABLE `detail_masuk`
+  MODIFY `iddetail_masuk` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `kategori`
+--
+ALTER TABLE `kategori`
+  MODIFY `id_kategori` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `login_attempts`
+--
+ALTER TABLE `login_attempts`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `simpan`
+--
+ALTER TABLE `simpan`
+  MODIFY `id_simpan` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `users_groups`
+--
+ALTER TABLE `users_groups`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- Constraints for dumped tables
 --
 
@@ -552,42 +612,42 @@ ALTER TABLE `users_groups`
 -- Constraints for table `barang`
 --
 ALTER TABLE `barang`
-  ADD CONSTRAINT `fk_barang_kategori` FOREIGN KEY (`kategori_id_kategori`) REFERENCES `kategori` (`id_kategori`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_barang_simpan1` FOREIGN KEY (`simpan_id_simpan`) REFERENCES `simpan` (`id_simpan`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_kategori` FOREIGN KEY (`kategori_id_kategori`) REFERENCES `kategori` (`id_kategori`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_simpan` FOREIGN KEY (`simpan_id_simpan`) REFERENCES `simpan` (`id_simpan`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
 -- Constraints for table `barang_keluar`
 --
 ALTER TABLE `barang_keluar`
-  ADD CONSTRAINT `fk_barang_keluar_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `barang_keluar_ibfk_1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `barang_masuk`
 --
 ALTER TABLE `barang_masuk`
-  ADD CONSTRAINT `fk_barang_masuk_supplier1` FOREIGN KEY (`supplier_id_supplier`) REFERENCES `supplier` (`id_supplier`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_barang_masuk_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `barang_masuk_ibfk_1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `barang_retur`
 --
 ALTER TABLE `barang_retur`
-  ADD CONSTRAINT `fk_barang_retur_supplier1` FOREIGN KEY (`supplier_id_supplier`) REFERENCES `supplier` (`id_supplier`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_barang_retur_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `barang_retur_ibfk_1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `fk_barang_retur_supplier1` FOREIGN KEY (`supplier_id_supplier`) REFERENCES `supplier` (`id_supplier`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `detail_keluar`
 --
 ALTER TABLE `detail_keluar`
   ADD CONSTRAINT `fk_detail_keluar_barang1` FOREIGN KEY (`barang_id_barang`) REFERENCES `barang` (`id_barang`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_detail_keluar_barang_keluar1` FOREIGN KEY (`barang_keluar_kode_keluar`) REFERENCES `barang_keluar` (`kode_keluar`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `user_keluar` FOREIGN KEY (`user_id_keluar`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
 -- Constraints for table `detail_masuk`
 --
 ALTER TABLE `detail_masuk`
+  ADD CONSTRAINT `fk_barang_masuk` FOREIGN KEY (`barang_masuk_kode_masuk`) REFERENCES `barang_masuk` (`kode_masuk`),
   ADD CONSTRAINT `fk_detail_masuk_barang1` FOREIGN KEY (`barang_id_barang`) REFERENCES `barang` (`id_barang`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_detail_masuk_barang_masuk1` FOREIGN KEY (`barang_masuk_kode_masuk`) REFERENCES `barang_masuk` (`kode_masuk`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `user_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
 -- Constraints for table `detail_retur`
@@ -601,7 +661,7 @@ ALTER TABLE `detail_retur`
 --
 ALTER TABLE `users_groups`
   ADD CONSTRAINT `fk_users_groups_groups1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_users_groups_users1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+  ADD CONSTRAINT `users_groups_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
